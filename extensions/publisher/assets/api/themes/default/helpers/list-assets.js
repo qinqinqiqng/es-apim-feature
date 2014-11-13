@@ -16,10 +16,25 @@
  *  under the License.
  *
  */
+var name;
+var hps = require('/themes/default/helpers/list-assets.js');
 var that = this;
+/*
+In order to inherit all variables in the default helper
+*/
+for (name in hps) {
+    if (hps.hasOwnProperty(name)) {
+        that[name] = hps[name];
+    }
+}
 var fn = that.resources;
-var resources = function (page,meta){
-	var o = fn(page,meta);
-	o.css.push('styles.css');
-	return o;
+var resources = function(page, meta) {
+    var o = fn(page, meta);
+    if (!o.css) {
+        o.css = [];
+    }
+    o.css.push('styles.css');
+    o.css.push('assets.css');
+    o.js.push('assets.js');
+    return o;
 };

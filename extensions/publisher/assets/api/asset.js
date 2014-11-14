@@ -16,3 +16,37 @@
  *  under the License.
  *
  */
+asset.renderer = function(ctx) {
+    var listLinks = function(ribbon, utils) {
+        ribbon.enabled=false;
+        ribbon.list = [];
+    };
+    var apiLinks = function(ribbon, utils) {
+        var navList = utils.navList();
+        navList.push('Overview', 'icon-list-alt', utils.buildUrl('overview'));
+        navList.push('Lifecycle', 'icon-list-alt', utils.buildUrl('lifecycle'));
+        navList.push('Version', 'icon-list-alt', utils.buildUrl('version'));
+        ribbon.enabled=true;
+        ribbon.list = navList;
+    };
+    return {
+        pageDecorators: {
+            ribbon: function(page) {
+                var ribbon = page.ribbon = {};
+                ribbon.isSearchEnabled = true;
+                switch (page.meta.pageName) {
+                    case 'list':
+                        listLinks(ribbon, this);
+                        break;
+                    case 'create':
+                        listLinks(ribbon, this);
+                        break;
+                    default:
+                        apiLinks(ribbon, this);
+                        break;
+                }
+                return page;
+            }
+        }
+    };
+};

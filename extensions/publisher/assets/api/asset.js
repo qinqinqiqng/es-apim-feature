@@ -16,9 +16,25 @@
  *  under the License.
  *
  */
+asset.server = function(ctx) {
+    return {
+        endpoints: {
+            pages: [{
+                title: 'Implement an API',
+                url: 'implement',
+                path: 'implement.jag'
+            },{
+                title:'Manage an API',
+                url:'manage',
+                path:'manage.jag'
+            }]
+        }
+    }
+};
+
 asset.renderer = function(ctx) {
     var listLinks = function(ribbon, utils) {
-        ribbon.enabled=false;
+        ribbon.enabled = false;
         ribbon.list = [];
     };
     var apiLinks = function(ribbon, utils) {
@@ -26,7 +42,7 @@ asset.renderer = function(ctx) {
         navList.push('Overview', 'icon-list-alt', utils.buildUrl('overview'));
         navList.push('Lifecycle', 'icon-list-alt', utils.buildUrl('lifecycle'));
         navList.push('Version', 'icon-list-alt', utils.buildUrl('version'));
-        ribbon.enabled=true;
+        ribbon.enabled = true;
         ribbon.list = navList;
     };
     return {

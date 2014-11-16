@@ -16,6 +16,17 @@
  *  under the License.
  *
  */
+
+asset.configure = function(ctx){
+    return{
+        meta:{
+            search:{
+                searchableFields:['overview_provider','overview_name']
+            }
+        }
+    }
+};
+
 asset.server = function(ctx) {
     return {
         endpoints: {
@@ -47,3 +58,4 @@ asset.server = function(ctx) {
         }
     };
 };
+

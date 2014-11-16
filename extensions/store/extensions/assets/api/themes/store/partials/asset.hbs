@@ -1,0 +1,45 @@
+<script>
+    var isSocial = ('{{features.social.enabled}}' == 'true');
+</script>
+<h1>{{assets.name}}</h1>
+<div class='container-fluid'>
+		<div class='row-fluid'>
+			<div class='span3'>
+				<div class ='row'>
+					<img src='{{url ""}}/extensions/assets/api/themes/store/imgs/03-twitter-icon.png' class='img-polaroid'></img>
+					<a><i class='icon-user'></i> {{assets.attributes.overview_provider}}</a>
+				</div>			
+			</div>
+			<div class='span9'>
+				<table class='table'>
+					<thead>
+					</thead>
+					<tbody>
+						<tr>
+							<td><b>Rating</b></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><b>Version</b>{{assets.attributes.overview_version}}</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><b>Status</b>{{assets.lifecycleState}}</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><b>Updated</b></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>	
+</div>
+<ul class='nav nav-tabs'>
+	<li><a href='#'>Overview</a></li>
+	<li><a href='#'>Documentation</a></li>
+	<li><a href='#'>API Console</a></li>
+	<li><a href='#'>Throttling Info</a></li>
+	<li><a href='#'>Forum</a></li>
+</ul>

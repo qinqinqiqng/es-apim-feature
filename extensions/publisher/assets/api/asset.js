@@ -57,6 +57,12 @@ asset.renderer = function(ctx) {
                     case 'create':
                         listLinks(ribbon, this);
                         break;
+                    case 'implement':
+                        listLinks(ribbon,this);
+                        break;
+                    case 'manage':
+                        listLinks(ribbon,this);
+                        break;
                     default:
                         apiLinks(ribbon, this);
                         break;

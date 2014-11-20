@@ -32,6 +32,21 @@ asset.server = function(ctx) {
     }
 };
 
+asset.configure = function(ctx){
+    return {
+        table:{
+            overview:{
+                thumbnail:{
+                    type:'file'
+                }
+            }
+        },
+        meta:{
+            thumbnail:'overview_thumbnail'
+        }
+    };
+};
+
 asset.renderer = function(ctx) {
     var listLinks = function(ribbon, utils) {
         ribbon.enabled = false;

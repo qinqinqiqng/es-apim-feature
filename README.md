@@ -11,3 +11,5 @@ To demonstrate the process of creating an extension feature for the ES.
 2. Identifying what type of extensions are needed
 3. Implement the extensions
 
+#JS Librarie used
+1. The extension uses the http://ned.im/noty/#/about v2.0

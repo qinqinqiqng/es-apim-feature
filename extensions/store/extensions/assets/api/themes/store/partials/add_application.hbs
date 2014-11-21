@@ -1,5 +1,38 @@
 <div class='well'>
-	<forum class='form-horizontal'>
+<form class='form-horizontal' method='post' id='form-application-create' action='{{url ""}}/apis/assets?type=application'>
+	<div class='control-group'>
+			<label class='control-label'>Name</label>
+			<div class='controls'>
+				<input type='text' id='overview_name' name='overview_name' />				
+			</div>
+	</div>
+	<div class='control-group'>
+			<label class='control-label'>Throttling Tier</label>
+			<div class='controls'>
+				<select>
+					<option>Gold</option>
+					<option>Unlimited</option>
+				</select>
+			</div>	
+			<div class='controls'>
+				<small>
+				{{t "Applications are required to make API subscriptions and consume them.You will be able to subscribe these applications to APIs from the API details page.Requests made from the application will be throttled by the Application level throttling tier and the subscription level throttling tier"}}
+				</small>
+			</div>
+	</div>
+	<div class='control-group'>
+			<label class='control-label' for='overview_description'>Description</label>
+			<div class='controls'>
+				<input id='overview_description' type='text' name='overview_description'/>
+			</div>
+	</div>
+	<div class='form-actions'>
+		<input type='submit' class='btn btn-primary' value='{{t "Add"}}' />
+	</div>
+</form>
+</div>
+<!--div class='well'>
+	<forum method='post' class='form-horizontal' id='form-application-create' action='{{url ""}}/apis/assets?type=application'>
 		<div class='control-group'>
 			<label class='control-label'>Name</label>
 			<div class='controls'>
@@ -26,11 +59,9 @@
 			</div>
 		</div>
 		<hr />
-		<div class='control-group'>
-			<div class='controls'>
-				<input type='submit' value='Add'  class='btn btn-primary' />
-			</div>
+		<div class='form-actions'>
+			<input type='submit' value='Add'  class='btn btn-primary' id="btn-create-application" />	
 		</div>	
 	</forum>
 
-</div>
+</div-->

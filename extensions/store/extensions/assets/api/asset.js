@@ -62,14 +62,14 @@ asset.renderer = function(ctx) {
         var description = attr.overview_description ? attr.overview_description : 'No description';
         return 'https://twitter.com/share?text=' + description + '&url=' + assetUrl;
     };
-    var facebookLink = function(assetUrl,asset){
-        return 'https://facebook.com/sharer.php?u='+assetUrl;
+    var facebookLink = function(assetUrl, asset) {
+        return 'https://facebook.com/sharer.php?u=' + assetUrl;
     };
-    var gplusLink = function(assetUrl,asset){
-        return 'https://plus.google.com/share?url='+assetUrl;
+    var gplusLink = function(assetUrl, asset) {
+        return 'https://plus.google.com/share?url=' + assetUrl;
     };
-    var diggitLink = function(assetUrl,asset){
-        return 'https://digg.com/submit?url='+assetUrl;
+    var diggitLink = function(assetUrl, asset) {
+        return 'https://digg.com/submit?url=' + assetUrl;
     };
     return {
         pageDecorators: {
@@ -78,7 +78,7 @@ asset.renderer = function(ctx) {
                 //If the 
                 if (!utils.reflection.isArray(page.assets || [])) {
                     var asset = page.assets;
-                    var assetUrl = this.buildAssetPageUrl('api', '/details' + asset.id);
+                    var assetUrl = this.buildAssetPageUrl('api', '/details/' + asset.id);
                     page.social_sites = {};
                     var facebook = page.social_sites.facebook = {};
                     var gplus = page.social_sites.gplus = {};
@@ -95,7 +95,8 @@ asset.renderer = function(ctx) {
                 if (!utils.reflection.isArray(page.assets || [])) {
                     var asset = page.assets;
                     var attributes = asset.attributes || {};
-                    var assetUrl = '?name=' + asset.name + '&version=' + attributes.overview_version + '&provider=' + attributes.overview_provider;
+                    var widgetLink = '/apis/widget';
+                    var assetUrl = widgetLink+'?name=' + asset.name + '&version=' + attributes.overview_version + '&provider=' + attributes.overview_provider;
                     page.api_embed_links = '<iframe width="450" height="120" src="' + assetUrl + '" frameborder="0" allowfullscreen></iframe>';
                 }
             }

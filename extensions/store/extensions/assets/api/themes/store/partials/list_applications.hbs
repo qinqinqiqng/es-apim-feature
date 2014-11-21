@@ -4,13 +4,24 @@
 			<th>Name</th>
 			<th>Tier</th>
 			<th>Status</th>
-			<th>Active</th>
 			<th>Callback URL</th>
 			<th>Description</th>
 			<th>Actions</th>
 		</tr>
 	</thead>
 	<tbody>
-		
+		{{#each assets}}
+		<tr>
+			<td>{{name}}</td>
+			<td>{{attributes.overview_throttlingtier}}</td>
+			<td>{{lifecycleState}}</td>
+			<td>{{attributes.overview_callbackurl}}</td>
+			<td>{{attributes.overview_description}}</td>
+			<td>
+					<a><i class='icon-edit'></i> Edit</a>
+					<a><i class='icon-trash'></i> Delete</a>
+			</td>
+		</tr>
+		{{/each}}		
 	</tbody>
 </table>

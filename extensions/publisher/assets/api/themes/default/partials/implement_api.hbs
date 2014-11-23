@@ -1,1 +1,36 @@
-Test
+<form id='form-api-endpoints' class='form-horizontal' method='post' action='{{url ""}}/asts/api/apis/endpoints'>
+	<div class=' control-group well'>
+		<label class='control-label'>{{t "Implementation Method"}}</label>
+	</div>
+	<legend>{{t "Endpoints"}}</legend>
+	<div class='control-group'>
+		<label class='control-label'>{{t "Endpoint Type"}}:</label>
+		<div class='controls'>
+			<input type='text' class='input-large' >
+		</div>
+	</div>
+	<div class='control-group'>
+		<label class='control-label'>{{t "Production Endpoint"}}:</label>
+		<div class='controls'>
+			<input type='text' class='input-large' >
+		</div>
+	</div>
+	<div class='control-group well'>
+		<label class='control-label'>{{t "Sandbox Endpoint"}}:</label>
+		<div class='controls'>
+			<input type='text' class='input-large' >
+		</div>
+	</div>
+		<div class='control-group well'>
+		<label class='control-label'>{{t "Sandbox Endpoint"}}:</label>
+		<div class='controls'>
+			<a href='#more-options-link'>{{t "Show More Options"}}</a>
+		</div>
+	</div>
+	<div class='control-group'>
+		<input type='submit' id='btn-save-endpoints' class='btn btn-primary'  value='{{t "Save"}}' >
+		<button class='btn btn-primary' id='btn-deploy-prototype'>{{t "Deploy Prototype"}}</button>
+		<a class='btn' href='{{url ""}}/asts/api/manage' id='btn-manage-prototype'>{{t "Manage"}}</a>
+		<button class='btn'>{{t "Cancel"}}</button>
+	</div>
+</form>

@@ -23,30 +23,39 @@ asset.server = function(ctx) {
                 title: 'Implement an API',
                 url: 'implement',
                 path: 'implement.jag'
+            }, {
+                title: 'Manage an API',
+                url: 'manage',
+                path: 'manage.jag'
             },{
-                title:'Manage an API',
-                url:'manage',
-                path:'manage.jag'
+                title:'Documents',
+                url:'documents',
+                path:'documents.jag'
+            }],
+            apis: [{
+                url: 'endpoints',
+                path: 'endpoints.jag'
+            }, {
+                url: 'prototype',
+                path: 'prototype.jag'
             }]
         }
     }
 };
-
-asset.configure = function(ctx){
+asset.configure = function(ctx) {
     return {
-        table:{
-            overview:{
-                thumbnail:{
-                    type:'file'
+        table: {
+            overview: {
+                thumbnail: {
+                    type: 'file'
                 }
             }
         },
-        meta:{
-            thumbnail:'overview_thumbnail'
+        meta: {
+            thumbnail: 'overview_thumbnail'
         }
     };
 };
-
 asset.renderer = function(ctx) {
     var listLinks = function(ribbon, utils) {
         ribbon.enabled = false;
@@ -73,10 +82,10 @@ asset.renderer = function(ctx) {
                         listLinks(ribbon, this);
                         break;
                     case 'implement':
-                        listLinks(ribbon,this);
+                        listLinks(ribbon, this);
                         break;
                     case 'manage':
-                        listLinks(ribbon,this);
+                        listLinks(ribbon, this);
                         break;
                     default:
                         apiLinks(ribbon, this);

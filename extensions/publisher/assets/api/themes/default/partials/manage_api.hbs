@@ -1,1 +1,57 @@
-manage!
+<h3>name/version</h3>
+<form method='post' action='{{url ""}}/asts/api/apis/prototype'>
+	<legend>Configurations</legend>
+	<div class='control-group'>
+		<label class='control-label'>{{t "Make this default version"}}:</label>
+		<div class='controls' name='default_version'>
+			<input type='checkbox'> <br />
+			<small>{{t "No defeault version defined for the current api"}}</small>
+		</div>
+	</div>
+	<div class='control-group'>
+		<label class='control-label'>{{t "Tier Availability"}}:</label>
+		<div class='controls'>
+			<select>
+				<option>Placeholder</option>
+			</select>
+		</div>
+	</div>
+	<div class='control-group'>
+		<label class='control-label'>{{t "Transports"}}:</label>
+		<div class='controls'>
+		<input type='checkbox' name='transport_http'> HTTP <br/>
+		<input type='checkbox' name='transport_https'> HTTPS 
+		</div>
+	</div>
+	<div class='control-group'>
+		<label class='control-label'>{{t "Sequences"}}:</label>
+		<div class='controls'>
+			<input type='checkbox' name='sequences_enabled'> 
+			<small>Check to select a custom sequence to be executed in the message flow</small>
+		</div>
+	</div>
+	<div class='control-group'>
+		<label class='control-label'>{{t "Response Caching"}}:</label>
+		<div class='controls'>
+			<select name='response_caching'>
+				<option>Disabled</option>
+			</select>
+		</div>
+	</div>
+	<div class='control-group'>
+		<label class='control-label'>{{t "Subscriptions"}}:</label>
+		<div class='controls'>
+			<select>
+				<option>Available to current Tenant Only</option>
+			</select>
+		</div>
+	</div>
+	<div class='control-group'>
+		<label class='control-label'>{{t "Tier Availability"}}:</label>
+		<div class='controls'>
+			<input class='btn' type='submit' name='{{t "Save"}}'>
+			<button class='btn btn-primary' id='btn-deploy-prototype'>{{t "Save&Publish"}}</button>
+			<button class='btn' id='btn-deploy-prototype'>{{t "Cancel"}}</button>
+		</div>
+	</div>
+</form>

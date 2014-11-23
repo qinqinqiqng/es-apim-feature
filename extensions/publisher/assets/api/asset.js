@@ -31,6 +31,10 @@ asset.server = function(ctx) {
                 title:'Documents',
                 url:'documents',
                 path:'documents.jag'
+            },{
+                title:'Tier Permissions',
+                url:'tier_permissions',
+                path:'tier_permissions.jag'
             }],
             apis: [{
                 url: 'endpoints',
@@ -38,6 +42,9 @@ asset.server = function(ctx) {
             }, {
                 url: 'prototype',
                 path: 'prototype.jag'
+            },{
+                url:'tiers',
+                path:'tiers.jag'
             }]
         }
     }

@@ -4,7 +4,7 @@
 	<li><a href='{{url ""}}/asts/api/manage'>Manage</a></li>
 </ul>
 <h3>name/version</h3>
-<form method='post' action='{{url ""}}/asts/api/apis/prototype'>
+<form class='form-horizontal' method='post' action='{{url ""}}/asts/api/apis/prototype'>
 	<legend>Configurations</legend>
 	<div class='control-group'>
 		<label class='control-label'>{{t "Make this default version"}}:</label>
@@ -24,8 +24,12 @@
 	<div class='control-group'>
 		<label class='control-label'>{{t "Transports"}}:</label>
 		<div class='controls'>
-		<input type='checkbox' name='transport_http'> HTTP <br/>
-		<input type='checkbox' name='transport_https'> HTTPS 
+			<label class='checkbox inline'>
+				<input type='checkbox' name='transport_http'> HTTP
+			</label>
+			<label class='checkbox inline'>
+				<input type='checkbox' name='transport_https'> HTTPS 
+			</label>	
 		</div>
 	</div>
 	<div class='control-group'>
@@ -51,8 +55,8 @@
 			</select>
 		</div>
 	</div>
+	<hr />
 	<div class='control-group'>
-		<label class='control-label'>{{t "Tier Availability"}}:</label>
 		<div class='controls'>
 			<input class='btn' type='submit' name='{{t "Save"}}'>
 			<button class='btn btn-primary' id='btn-deploy-prototype'>{{t "Save&Publish"}}</button>
